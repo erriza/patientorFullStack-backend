@@ -5,11 +5,13 @@ import { NonSensitivePatient, Patient, NewPatientEntry, NewEntry, Entry } from "
 
 
 const getPatient = (): NonSensitivePatient[] => {
-    return patientData.map(({id, name, dateOfBirth, gender, occupation}) => ({
+    return patientData.map(({id, name, dateOfBirth, gender, occupation, entries}) => ({
         id,
         name,
         dateOfBirth,
-        gender, occupation
+        gender, 
+        occupation,
+        entries
     }))
 }
 
@@ -61,7 +63,6 @@ const createEntry = (patientId: string, entry: NewEntry): Entry => {
     } else {
         throw new Error('Invalid entry type');
     }
-    console.log('entry to Add', newEntry);
     patient.entries.push(newEntry);
     return newEntry;
 };

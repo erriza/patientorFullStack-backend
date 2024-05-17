@@ -1,5 +1,6 @@
 import express from 'express'
 import router from './routes/patients';
+import routerDiagnosis from './routes/diagnosis';
 
 const cors = require('cors')
 
@@ -15,7 +16,7 @@ app.get('/api/ping', (_req, res) => {
     res.send('pong')
 })
 
-app.use('/api/diagnosis', router);
+app.use('/api/diagnosis', routerDiagnosis);
 
 app.use('/api/patients', router);
 

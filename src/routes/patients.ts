@@ -28,7 +28,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/:id/entries', (req, res) => {
-    console.log('post id entry', req.body)
     const patientId = (req.body.id);
     try {
         const newEntry = toNewEntry(req.body);
